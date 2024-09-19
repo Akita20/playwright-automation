@@ -13,7 +13,7 @@ const { defineConfig, devices } = require('@playwright/test');
 module.exports = defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: false,
+  fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -38,7 +38,7 @@ module.exports = defineConfig({
       use: { 
         ...devices['Desktop Chrome'],
           viewport:{width: 1920, height: 1080}, // maximize window: set it based on your computer screen' size
-          headless: false // headed mode
+          headless: true // headed mode
        },
     },
 
